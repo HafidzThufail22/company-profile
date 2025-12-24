@@ -1,57 +1,56 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Check, Star, Zap } from 'lucide-react';
+import { Check, Star, Clock, Car, Award } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import Card from '../components/ui/Card';
 
 const packages = [
   {
-    name: 'Manual Dasar',
+    name: 'Paket Dasar',
+    price: 'Rp 400.000',
+    duration: '4 Jam',
+    popular: false,
+  },
+  {
+    name: 'Paket Standart',
     price: 'Rp 750.000',
-    description: 'Paket dasar untuk pemula yang ingin belajar mobil manual.',
-    duration: '5x Pertemuan',
-    features: [
-      '5 sesi latihan @90 menit',
-      'Mobil manual standar',
-      'Instruktur berpengalaman',
-      'Sertifikat kelulusan',
-    ],
+    duration: '8 Jam',
     popular: false,
-    icon: null,
   },
   {
-    name: 'Matic Lancar',
-    price: 'Rp 850.000',
-    description: 'Pilihan terpopuler untuk belajar mobil matic dengan cepat.',
-    duration: '6x Pertemuan',
-    features: [
-      '6 sesi latihan @90 menit',
-      'Mobil matic terbaru',
-      'Instruktur berpengalaman',
-      'Sertifikat kelulusan',
-      'Latihan parkir intensif',
-    ],
+    name: 'Paket Lancar',
+    price: 'Rp 900.000',
+    duration: '10 Jam',
     popular: true,
-    icon: Star,
   },
   {
-    name: 'Paket VIP',
-    price: 'Rp 1.500.000',
-    description: 'Layanan premium dengan fasilitas terlengkap dan privat.',
-    duration: '10x Pertemuan',
-    features: [
-      '10 sesi latihan @120 menit',
-      'Pilih manual atau matic',
-      'Instruktur senior pilihan',
-      'Sertifikat premium',
-      'Jemput dari rumah',
-      'Bonus latihan malam',
-    ],
+    name: 'Paket Lancar',
+    price: 'Rp 1.350.000',
+    duration: '16 Jam',
     popular: false,
-    icon: Zap,
+  },
+  {
+    name: 'Paket Lancar + SIM A',
+    price: 'Rp 1.550.000',
+    duration: '10 Jam + SIM A',
+    popular: false,
+  },
+  {
+    name: 'Paket Lancar + SIM A',
+    price: 'Rp 1.900.000',
+    duration: '16 Jam + SIM A',
+    popular: false,
   },
 ];
+
+const keterangan = [
+  'Biaya Pendaftaran Rp 75.000',
+  '1 Jam Pelajaran 60 menit terdiri dari 45 menit praktik dan 15 menit teori',
+  'Biaya Ujian dan Sertifikat Rp 50.000',
+];
+
+const carInfo = 'Avanza Veloz Full AC';
 
 export default function Packages() {
   return (
@@ -89,33 +88,25 @@ export default function Packages() {
               >
                 {/* Header */}
                 <div className="text-center pb-6 border-b border-brand-light">
-                  {pkg.icon && (
-                    <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <pkg.icon className="w-6 h-6 text-brand-blue" />
-                    </div>
-                  )}
                   <h3 className="text-xl font-bold text-brand-dark mb-2 font-[family-name:var(--font-heading)]">
                     {pkg.name}
                   </h3>
-                  <p className="text-brand-muted text-sm mb-4">{pkg.description}</p>
-                  <div className="flex items-baseline justify-center gap-1">
+                  <span className="text-brand-blue text-sm font-medium bg-brand-blue/10 px-3 py-1 rounded-full">
+                    {pkg.duration}
+                  </span>
+                  <div className="flex items-baseline justify-center gap-1 mt-4">
                     <span className="text-3xl font-bold text-brand-dark font-[family-name:var(--font-heading)]">
                       {pkg.price}
                     </span>
                   </div>
-                  <span className="text-brand-muted text-sm">{pkg.duration}</span>
                 </div>
 
-                {/* Features */}
-                <div className="flex-1 py-6">
-                  <ul className="space-y-3">
-                    {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
-                        <span className="text-brand-muted text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Car Info */}
+                <div className="flex-1 py-6 flex items-center justify-center">
+                  <div className="flex items-center gap-2 text-brand-muted">
+                    <Car className="w-5 h-5 text-brand-blue" />
+                    <span className="text-sm">{carInfo}</span>
+                  </div>
                 </div>
 
                 {/* CTA Button */}
@@ -134,20 +125,52 @@ export default function Packages() {
           ))}
         </div>
 
+        {/* Keterangan */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-16 bg-white rounded-2xl p-8 shadow-lg"
+        >
+          <h4 className="text-xl font-bold text-brand-dark mb-6 font-[family-name:var(--font-heading)]">
+            Keterangan
+          </h4>
+          <ul className="space-y-3">
+            {keterangan.map((item, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <span className="text-brand-blue font-bold">{index + 1}.</span>
+                <span className="text-brand-muted">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
         {/* Additional Info */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center text-brand-muted mt-12"
+          className="text-center mt-12"
         >
-          Butuh paket custom?{' '}
-          <a href="#kontak" className="text-brand-blue font-semibold hover:underline">
-            Hubungi kami
-          </a>{' '}
-          untuk penawaran khusus.
-        </motion.p>
+          <a
+            href="https://wa.me/6281215884127?text=Halo%20LPK%20Sadewa%2C%20saya%20ingin%20mendaftar%20kursus%20mengemudi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-blue text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-brand-blue/90 transition-all hover:shadow-xl hover:shadow-brand-blue/25"
+          >
+            Daftar Sekarang
+            <span>→</span>
+          </a>
+          <p className="text-brand-muted mt-6">
+            Butuh paket custom?{' '}
+            <a href="#kontak" className="text-brand-blue font-semibold hover:underline">
+              Hubungi kami
+            </a>{' '}
+            untuk penawaran khusus.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

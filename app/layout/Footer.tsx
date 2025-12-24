@@ -1,6 +1,6 @@
 'use client';
 
-import { Car, MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Car, MapPin, Phone, Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const footerLinks = [
@@ -9,12 +9,6 @@ const footerLinks = [
   { href: '#paket', label: 'Paket' },
   { href: '#lokasi', label: 'Lokasi' },
   { href: '#kontak', label: 'Kontak' },
-];
-
-const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Youtube, href: '#', label: 'Youtube' },
 ];
 
 export default function Footer() {
@@ -79,15 +73,18 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
-                <span>Jl. Raya Sadewa No. 123, Jakarta Selatan</span>
+                <span>Jl. Gadingan, Durungan, Wates, Kulon Progo, DIY</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone className="w-5 h-5 text-brand-blue flex-shrink-0" />
-                <span>+62 812-3456-7890</span>
-              </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <Mail className="w-5 h-5 text-brand-blue flex-shrink-0" />
-                <span>info@lpksadewa.com</span>
+                <a 
+                  href="https://wa.me/6281215884127" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-blue transition-colors"
+                >
+                  0812 1588 4127
+                </a>
               </li>
             </ul>
           </motion.div>
@@ -102,18 +99,15 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 font-[family-name:var(--font-heading)]">
               Ikuti Kami
             </h3>
-            <div className="flex gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-blue transition-colors"
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
+            <a
+              href="https://instagram.com/sadewacourse"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-4 py-3 bg-gray-800 rounded-xl hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-orange-400 transition-all group"
+            >
+              <Instagram className="w-5 h-5" />
+              <span className="text-gray-400 group-hover:text-white transition-colors">@sadewacourse</span>
+            </a>
           </motion.div>
         </div>
 
@@ -125,7 +119,7 @@ export default function Footer() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
         >
-          <p>&copy; {new Date().getFullYear()} LPK Sadewa. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} LPK Sadewa..</p>
         </motion.div>
       </div>
     </footer>

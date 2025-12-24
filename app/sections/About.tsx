@@ -1,14 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle, Award, Heart, Calendar } from 'lucide-react';
+import { CheckCircle, Shield, Heart, Calendar } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 
 const features = [
   {
-    icon: Award,
-    title: 'Berizin Resmi',
-    description: 'Terdaftar dan diakui oleh Dinas Perhubungan dengan sertifikat resmi.',
+    icon: Shield,
+    title: 'Fokus pada Standar dan Keselamatan Kerja',
+    description: 'Mengutamakan keselamatan dengan standar pelatihan terbaik dan terukur.',
   },
   {
     icon: Heart,
@@ -41,32 +41,13 @@ export default function About() {
             className="relative"
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              {/* Placeholder Image */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-brand-blue/20 to-brand-blue/5 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-24 h-24 bg-brand-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg
-                      className="w-12 h-12 text-brand-blue"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-brand-muted text-sm">Foto Kegiatan Pelatihan</p>
-                </div>
+              {/* Image Kegiatan Pelatihan */}
+              <div className="aspect-[4/3]">
+                <img 
+                  src="/images/Stir_1.jpg" 
+                  alt="Kegiatan Pelatihan"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             
@@ -129,11 +110,20 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-10"
+              className="mt-10 flex flex-wrap gap-4"
             >
               <a
+                href="https://wa.me/6281215884127?text=Halo%20LPK%20Sadewa%2C%20saya%20ingin%20mendaftar%20kursus%20mengemudi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-blue/90 transition-all hover:shadow-xl hover:shadow-brand-blue/25"
+              >
+                Daftar Sekarang
+                <span>→</span>
+              </a>
+              <a
                 href="#paket"
-                className="inline-flex items-center gap-2 text-brand-blue font-semibold hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 text-brand-blue font-semibold hover:gap-3 transition-all px-6 py-3"
               >
                 Lihat Paket Kursus
                 <span>→</span>

@@ -22,10 +22,10 @@ export default function Location() {
             transition={{ duration: 0.6 }}
             className="relative rounded-3xl overflow-hidden shadow-xl"
           >
-            {/* Google Maps Placeholder - Replace src with actual embed URL */}
+            {/* Google Maps */}
             <div className="aspect-[4/3] bg-gradient-to-br from-brand-light to-brand-blue/5">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2!2d106.8!3d-6.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMDAuMCJTIDEwNsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sid!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15809.188033083994!2d110.1603804237861!3d-7.863954979998634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7afbfa7225b85b%3A0x72b1eb82b17ecbbe!2sLKP%20SADEWA!5e0!3m2!1sid!2sid!4v1766584574049!5m2!1sid!2sid"
                 className="w-full h-full border-0"
                 allowFullScreen
                 loading="lazy"
@@ -52,9 +52,9 @@ export default function Location() {
                     Alamat Kantor
                   </h3>
                   <p className="text-brand-muted leading-relaxed">
-                    Jl. Raya Sadewa No. 123<br />
-                    Kelurahan Merdeka, Kecamatan Sukamaju<br />
-                    Jakarta Selatan, DKI Jakarta 12345
+                    Jl. Gadingan, Durungan, Wates<br />
+                    Kec. Wates, Kabupaten Kulon Progo<br />
+                    Daerah Istimewa Yogyakarta 55651
                   </p>
                 </div>
               </div>
@@ -62,20 +62,12 @@ export default function Location() {
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3 text-brand-muted">
                   <div className="w-2 h-2 bg-brand-blue rounded-full" />
-                  <span>Buka Senin - Sabtu: 08.00 - 18.00 WIB</span>
-                </div>
-                <div className="flex items-center gap-3 text-brand-muted">
-                  <div className="w-2 h-2 bg-brand-blue rounded-full" />
-                  <span>Minggu: 09.00 - 15.00 WIB</span>
-                </div>
-                <div className="flex items-center gap-3 text-brand-muted">
-                  <div className="w-2 h-2 bg-green-500 rounded-full" />
-                  <span className="text-green-600 font-medium">Parkir luas tersedia</span>
+                  <span>Buka Senin - Sabtu: 08.00 - 16.00 WIB</span>
                 </div>
               </div>
 
               <a
-                href="https://maps.google.com"
+                href="https://www.google.com/maps/dir/?api=1&destination=-7.863954979998634,110.1603804237861"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-blue/90 transition-all hover:shadow-lg hover:shadow-brand-blue/25"
