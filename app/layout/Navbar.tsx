@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Car } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Car } from "lucide-react";
 
 const navLinks = [
-  { href: '#home', label: 'Beranda' },
-  { href: '#about', label: 'Tentang' },
-  { href: '#paket', label: 'Paket' },
-  { href: '#lokasi', label: 'Lokasi' },
-  { href: '#kontak', label: 'Kontak' },
+  { href: "#home", label: "Beranda" },
+  { href: "#about", label: "Tentang" },
+  { href: "#paket", label: "Paket" },
+  { href: "#lokasi", label: "Lokasi" },
+  { href: "#kontak", label: "Kontak" },
 ];
 
 export default function Navbar() {
@@ -20,8 +20,8 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleLinkClick = () => {
@@ -32,12 +32,13 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`
-        fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${isScrolled 
-          ? 'bg-brand-white/90 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.08)]' 
-          : 'bg-transparent'
+        fixed top-0 left-0 right-0 z-50 transition-all duration-300 safe-top
+        ${
+          isScrolled
+            ? "bg-brand-white/95 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.08)] supports-[backdrop-filter]:bg-brand-white/90"
+            : "bg-transparent"
         }
       `}
     >
@@ -76,7 +77,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-brand-dark hover:text-brand-blue transition-colors"
+            className="md:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-dark hover:text-brand-blue transition-colors active:scale-95"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -89,12 +90,12 @@ export default function Navbar() {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-brand-white border-t border-brand-light overflow-hidden"
+            className="md:hidden bg-brand-white border-t border-brand-light overflow-hidden max-h-[calc(100vh-5rem)] max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain"
           >
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-6 space-y-4 safe-bottom">
               {navLinks.map((link) => (
                 <a
                   key={link.href}

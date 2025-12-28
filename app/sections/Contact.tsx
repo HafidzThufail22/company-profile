@@ -1,23 +1,23 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { MessageCircle, Instagram, Clock } from 'lucide-react';
-import SectionHeader from '../components/SectionHeader';
+import { motion } from "framer-motion";
+import { MessageCircle, Instagram, Clock } from "lucide-react";
+import SectionHeader from "../components/SectionHeader";
 
 const contactInfo = [
   {
     icon: MessageCircle,
-    label: 'WhatsApp',
-    value: '0812 1588 4127',
-    href: 'https://wa.me/6281215884127?text=Halo%20LPK%20Sadewa%2C%20saya%20ingin%20bertanya%20tentang%20kursus%20mengemudi',
-    color: 'bg-green-500',
+    label: "WhatsApp",
+    value: "0812 1588 4127",
+    href: "https://wa.me/6281215884127?text=Halo%20LPK%20Sadewa%2C%20saya%20ingin%20bertanya%20tentang%20kursus%20mengemudi",
+    color: "bg-green-500",
   },
   {
     icon: Instagram,
-    label: 'Instagram',
-    value: '@sadewacourse',
-    href: 'https://instagram.com/sadewacourse',
-    color: 'bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400',
+    label: "Instagram",
+    value: "@sadewacourse",
+    href: "https://instagram.com/sadewacourse",
+    color: "bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400",
   },
 ];
 
@@ -43,12 +43,18 @@ export default function Contact() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="flex items-center gap-4 p-6 bg-brand-white rounded-2xl shadow-sm hover:shadow-lg transition-all group"
             >
-              <div className={`w-14 h-14 ${item.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
+              <div
+                className={`w-14 h-14 ${item.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}
+              >
                 <item.icon className="w-7 h-7 text-white" />
               </div>
               <div>
-                <span className="text-sm text-brand-muted block">{item.label}</span>
-                <span className="font-semibold text-brand-dark text-lg">{item.value}</span>
+                <span className="text-sm text-brand-muted block">
+                  {item.label}
+                </span>
+                <span className="font-semibold text-brand-dark text-lg">
+                  {item.value}
+                </span>
               </div>
             </motion.a>
           ))}
@@ -64,10 +70,15 @@ export default function Contact() {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <Clock className="w-5 h-5 text-brand-blue" />
-            <span className="font-semibold text-brand-dark">Jam Operasional</span>
+            <span className="font-semibold text-brand-dark">
+              Jam Operasional
+            </span>
           </div>
           <p className="text-brand-muted">
-            Buka Senin - Sabtu: <span className="font-medium text-brand-dark">08.00 - 16.00 WIB</span>
+            Buka Senin - Sabtu:{" "}
+            <span className="font-medium text-brand-dark">
+              08.00 - 16.00 WIB
+            </span>
           </p>
         </motion.div>
 
@@ -83,7 +94,7 @@ export default function Contact() {
             href="https://wa.me/6281215884127?text=Halo%20LPK%20Sadewa%2C%20saya%20ingin%20mendaftar%20kursus%20mengemudi"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-brand-blue text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-brand-blue/90 transition-all hover:shadow-xl hover:shadow-brand-blue/25"
+            className="inline-flex items-center gap-2 bg-brand-blue text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-brand-blue/90 transition-all hover:shadow-xl hover:shadow-brand-blue/25 min-h-[48px] active:scale-95"
           >
             <MessageCircle className="w-5 h-5" />
             Chat via WhatsApp

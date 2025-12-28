@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { MapPin, Navigation } from 'lucide-react';
-import SectionHeader from '../components/SectionHeader';
+import { motion } from "framer-motion";
+import { MapPin, Navigation } from "lucide-react";
+import SectionHeader from "../components/SectionHeader";
 
 export default function Location() {
   return (
@@ -18,7 +18,7 @@ export default function Location() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             className="relative rounded-3xl overflow-hidden shadow-xl"
           >
@@ -39,7 +39,7 @@ export default function Location() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
             <div className="bg-brand-light rounded-3xl p-8 md:p-10">
@@ -52,8 +52,10 @@ export default function Location() {
                     Alamat Kantor
                   </h3>
                   <p className="text-brand-muted leading-relaxed">
-                    Jl. Gadingan, Durungan, Wates<br />
-                    Kec. Wates, Kabupaten Kulon Progo<br />
+                    Jl. Gadingan, Durungan, Wates
+                    <br />
+                    Kec. Wates, Kabupaten Kulon Progo
+                    <br />
                     Daerah Istimewa Yogyakarta 55651
                   </p>
                 </div>
@@ -70,7 +72,7 @@ export default function Location() {
                 href="https://www.google.com/maps/dir/?api=1&destination=-7.863954979998634,110.1603804237861"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-blue/90 transition-all hover:shadow-lg hover:shadow-brand-blue/25"
+                className="inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-blue/90 transition-all hover:shadow-lg hover:shadow-brand-blue/25 min-h-[48px] active:scale-95"
               >
                 <Navigation className="w-5 h-5" />
                 Petunjuk Arah
