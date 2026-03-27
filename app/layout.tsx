@@ -9,6 +9,7 @@ const outfit = Outfit({
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
+  
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",

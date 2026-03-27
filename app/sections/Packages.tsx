@@ -1,56 +1,68 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Check, Star, Clock, Car, Award } from 'lucide-react';
-import SectionHeader from '../components/SectionHeader';
-import Card from '../components/ui/Card';
+import { motion } from "framer-motion";
+import { Check, Star, Clock, Car, Award } from "lucide-react";
+import SectionHeader from "../components/SectionHeader";
+import Card from "../components/ui/Card";
 
 const packages = [
   {
-    name: 'Paket Dasar',
-    price: 'Rp 400.000',
-    duration: '4 Jam',
+    name: "Paket Dasar",
+    price: "Rp 500.000",
+    duration: "5 Jam",
     popular: false,
   },
   {
-    name: 'Paket Standart',
-    price: 'Rp 750.000',
-    duration: '8 Jam',
+    name: "Paket Standart",
+    price: "Rp 750.000",
+    duration: "8 Jam",
     popular: false,
   },
   {
-    name: 'Paket Lancar',
-    price: 'Rp 900.000',
-    duration: '10 Jam',
+    name: "Paket Lancar",
+    price: "Rp 900.000",
+    duration: "10 Jam",
     popular: true,
   },
   {
-    name: 'Paket Lancar',
-    price: 'Rp 1.350.000',
-    duration: '16 Jam',
+    name: "Paket Lancar",
+    price: "Rp 1.400.000",
+    duration: "16 Jam",
     popular: false,
   },
   {
-    name: 'Paket Lancar + SIM A',
-    price: 'Rp 1.550.000',
-    duration: '10 Jam + SIM A',
+    name: "Paket Lancar + SIM A",
+    price: "Rp 1.550.000",
+    duration: "10 Jam + SIM A",
     popular: false,
   },
   {
-    name: 'Paket Lancar + SIM A',
-    price: 'Rp 1.900.000',
-    duration: '16 Jam + SIM A',
+    name: "Paket Lancar + SIM A",
+    price: "Rp 1.900.000",
+    duration: "16 Jam + SIM A",
+    popular: false,
+  },
+  {
+    name: "Paket Lancar",
+    price: "Rp 1.700.000",
+    duration: "20 Jam",
+    popular: false,
+  },
+  {
+    name: "Paket Lancar + SIM A",
+    price: "Rp 2.300.000",
+    duration: "20 Jam + SIM A",
     popular: false,
   },
 ];
 
 const keterangan = [
-  'Biaya Pendaftaran Rp 75.000',
-  '1 Jam Pelajaran 60 menit terdiri dari 45 menit praktik dan 15 menit teori',
-  'Biaya Ujian dan Sertifikat Rp 50.000',
+  "Biaya Pendaftaran Rp 75.000",
+  "1 Jam Pelajaran 60 menit terdiri dari 45 menit praktik dan 15 menit teori",
+  "Biaya Ujian dan Sertifikat Rp 50.000",
 ];
 
-const carInfo = 'Avanza Veloz Full AC';
+const carInfo = "Avanza Veloz Full AC";
 
 export default function Packages() {
   return (
@@ -67,7 +79,7 @@ export default function Packages() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative"
             >
@@ -82,7 +94,7 @@ export default function Packages() {
 
               <Card
                 className={`h-full flex flex-col ${
-                  pkg.popular ? 'ring-2 ring-brand-blue' : ''
+                  pkg.popular ? "ring-2 ring-brand-blue" : ""
                 }`}
                 hover={true}
               >
@@ -114,8 +126,8 @@ export default function Packages() {
                   href="#kontak"
                   className={`block text-center py-3 px-6 rounded-full font-semibold transition-all ${
                     pkg.popular
-                      ? 'bg-brand-blue text-white hover:bg-brand-blue/90 hover:shadow-lg hover:shadow-brand-blue/25'
-                      : 'bg-brand-light text-brand-dark hover:bg-brand-blue hover:text-white'
+                      ? "bg-brand-blue text-white hover:bg-brand-blue/90 hover:shadow-lg hover:shadow-brand-blue/25"
+                      : "bg-brand-light text-brand-dark hover:bg-brand-blue hover:text-white"
                   }`}
                 >
                   Pilih Paket
@@ -164,10 +176,13 @@ export default function Packages() {
             <span>→</span>
           </a>
           <p className="text-brand-muted mt-6">
-            Butuh paket custom?{' '}
-            <a href="#kontak" className="text-brand-blue font-semibold hover:underline">
+            Butuh paket custom?{" "}
+            <a
+              href="#kontak"
+              className="text-brand-blue font-semibold hover:underline"
+            >
               Hubungi kami
-            </a>{' '}
+            </a>{" "}
             untuk penawaran khusus.
           </p>
         </motion.div>
